@@ -1,0 +1,68 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cartelera - cine RAFT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>cine RAFT</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Login</a>
+      <a href="cartelera.html">Cartelera</a>
+      <a href="perfil.html">Mi Perfil</a>
+    </nav>
+  </header>
+  <main>
+    <div class="cartelera">
+      <h2>Películas en cartelera</h2>
+      <div class="slider">
+        <div class="slides" id="slideContainer">
+          <img src="imgs/muy-lejos-72702.v17433684305488.jpg" alt="Imagen 1">
+          <img src="imgs/confidencial-black-bag-72964.v17437972161114.jpg" alt="Imagen 2">
+          <img src="imgs/la-viajera-72974.v17438010842985.jpg" alt="Imagen 3">
+        </div>
+        <button class="nav-button prev" onclick="changeSlide(-1)">❮</button>
+        <button class="nav-button next" onclick="changeSlide(1)">❯</button>
+      </div>
+    </div>
+
+    <div class="fila1">
+      <img class="portadas" src="imgs/la-viajera-72974.v17438010842985.jpg" alt="Imagen 3">
+      <img class="portadas" src="imgs/confidencial-black-bag-72964.v17437972161114.jpg" alt="Imagen 3">
+
+    </div>
+    <div class="fila1">
+      <img class="portadas" src="imgs/la-viajera-72974.v17438010842985.jpg" alt="Imagen 3">
+      <img class="portadas" src="imgs/confidencial-black-bag-72964.v17437972161114.jpg" alt="Imagen 3">
+    </div>
+    <div class="fila1">
+      <img class="portadas" src="imgs/la-viajera-72974.v17438010842985.jpg" alt="Imagen 3">
+      <img class="portadas" src="imgs/confidencial-black-bag-72964.v17437972161114.jpg" alt="Imagen 3">
+    </div>
+
+    <script>
+      let currentIndex = 0;
+
+      function changeSlide(direction) {
+        const slides = document.getElementById('slideContainer');
+        const totalSlides = slides.children.length;
+
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 600}px)`;
+      }
+    </script>
+  </main>
+  <footer>
+    <p>© Cine RAFT 2025</p>
+    <div class="direccion">
+      Calle Watch Party <span id="direccion"></span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
